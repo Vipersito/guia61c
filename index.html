@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>guia 61c Api</title>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="personal-data">
+            <p>Nombre: Moises Ernestos Cruz Perez</p>
+            <p>Carnet: CP17059</p>
+            <p>Carrera: Ingeniería de Sistemas</p>
+        </div>
+    </nav>
+    <div class="obtenerArt">
+        <button id="obtenerArt-btn" onclick="mostrarArticulos()">Obtener Articulos</button>
+    </div>
+    <main id="main">
+        <div class="container-opt">
+            <div class="filtro-category">
+                <label for="filtro">Buscar por:</label>
+                <div id="filtro-category">
+                    <button onclick="filtrarArticulos('electronicos')">Electronicos</button>
+                    <button onclick="filtrarArticulos('joyeria')">Joyeria</button>
+                    <button onclick="filtrarArticulos('caballeros')">Caballeros</button>
+                    <button onclick="filtrarArticulos('damas')">Damas</button>
+                </div>
+                <div id="filtro-price">
+                    <button onclick="filtrarArticulos('', 'desc')">Mayor a Menor</button>
+                    <button onclick="filtrarArticulos('', 'asc')">Menor a Mayor</button>
+                </div>
+                <button id="limpiar-filtros">Limpiar Filtros</button>
+            </div>
+            <button id="add-btn">Agregar producto</button>
+        </div>
+        <div class="container-table">
+            <table>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Título</th>
+                    <th>Precio</th>
+                    <th>Categoría</th>
+                    <th>Descripción</th>
+                    <th>Eliminar</th>
+                </tr>
+                <tbody id="tbody">
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <section id="add-container">
+        <form id="add-product-form">
+            <div class="option">
+                <label for="product-image">Imagen (url):</label>
+                <input type="text" id="product-image" name="product-image">
+            </div>
+            <div class="option">
+                <label for="product-price">Precio:</label>
+                <input type="number" id="product-price" name="product-price">
+            </div>
+            <div class="option">
+                <label for="product-title">Título:</label>
+                <input type="text" id="product-title" name="product-title">    
+            </div>
+            <div class="option">
+                <label for="product-category">Categoría:</label>
+                <select id="product-category" name="product-category">
+                    <option value="" disabled selected>Seleccione una opción</option>
+                    <option value="electronicos">electronicos</option>
+                    <option value="joyeria">joyeria</option>
+                    <option value="caballeros">caballeros</option>
+                    <option value="damas">damas</option>
+                </select>
+            </div>
+            <div class="option">
+                <label for="product-description">Descripción:</label>
+                <textarea name="product-description" id="product-description"></textarea>
+            </div>                        
+            <!-- Botones para agregar o cancelar la adición del producto -->
+            <div class="forms-btn">
+                <button type="button" id="add-btn-forms">Agregar</button>
+                <button type="button" id="can-btn-forms">Cancelar</button>
+            </div>
+        </form>
+    </section>
+    <script src="script.js"></script>
+
+    <footer class="footer">
+        <p>Universidad de El Salvador 2024</p>
+    </footer>
+</body>
+</html>
